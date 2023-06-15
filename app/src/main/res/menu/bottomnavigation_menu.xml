@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/live"
+        android:title="LIVE"
+        android:icon="@drawable/ic_live"/>
+
+    <item
+        android:id="@+id/upcoming"
+        android:title="UPCOMING"
+        android:icon="@drawable/ic_upcoming"/>
+
+    <item
+        android:id="@+id/news"
+        android:title="NEWS"
+        android:icon="@drawable/ic_news"/>
+
+    <item
+        android:id="@+id/series"
+        android:title="SERIES"
+        android:icon="@drawable/ic_series"/>
+
+    <item
+        android:id="@+id/ranking"
+        android:title="RANKING"
+        android:icon="@drawable/ic_ranking"/>
+
+
+
+</menu>
