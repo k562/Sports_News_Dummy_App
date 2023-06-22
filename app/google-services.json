@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "262408064101",
+    "project_id": "ab1s-9f8f9",
+    "storage_bucket": "ab1s-9f8f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262408064101:android:94f365681a61a0553c4a8c",
+        "android_client_info": {
+          "package_name": "com.example.sportsnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262408064101-5otg1c2i0j2ds6bv7blr4fqrkd830a5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sportsnews",
+            "certificate_hash": "ccf99f010dce0a0d6861ad4eb823fb3070dc1c6e"
+          }
+        },
+        {
+          "client_id": "262408064101-sspn7ms3rfcqc4jsuss9sclfj64bm606.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnt-arntpFfKehKZ2kG6yDQOBD0fTe_I0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262408064101-sspn7ms3rfcqc4jsuss9sclfj64bm606.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

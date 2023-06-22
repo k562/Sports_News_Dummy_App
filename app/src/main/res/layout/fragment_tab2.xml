@@ -17,9 +17,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
+            android:layout_margin="8dp"
             app:cardMaxElevation="10dp">
 
 
@@ -33,33 +33,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:gravity="center"
                     android:text="Info"
                     android:drawableLeft="@drawable/ic_info"
+                    android:drawablePadding="12dp"
+                    android:maxLines="1"
+                    android:padding="10dp"
                     android:textSize="18sp"
-                    android:drawablePadding="10dp"
                     android:textStyle="bold" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.2"
-                        android:text="Match"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Match" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="CRR 3.9"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="CRR3.9" />
 
 
                 </LinearLayout>
@@ -67,23 +70,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.45"
-                        android:text="Series"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Series" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="ICC WORLD TEST \nCHAMPIONSHIP, 2021-2023"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="ICC WORLD TEST\n CHAMPIONSHIP, 2021-2023" />
 
 
                 </LinearLayout>
@@ -91,23 +94,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.25"
-                        android:text="Date"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Date" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="3:00 PM"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="21-04-2023" />
 
 
                 </LinearLayout>
@@ -115,46 +118,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.24"
-                        android:text="Time"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Time" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="CRR 3.9"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.45"
-                        android:text="Umpires"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.2"
-                        android:text="Chris Gaffaney, Richard Illingwort\nRichard Kettleborough, Michael Gough"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="5:00 PM" />
 
 
                 </LinearLayout>
@@ -162,23 +142,47 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.45"
-                        android:text="Referee"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Umpire" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.7"
-                        android:text="Richie Richardson (West Indies)"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="Chris Gaffaney, Richard illingwort\n Richard Kettleborough, Michael Gough" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Refferee" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="Richie Richardon (West Indies)" />
 
 
                 </LinearLayout>
@@ -192,9 +196,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
+            android:layout_margin="8dp"
             app:cardMaxElevation="10dp">
 
 
@@ -220,23 +224,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.2"
-                        android:text="Stadium"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Stadium" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="📍kennington Oval , London"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="📍Kennington Oval, London" />
 
 
                 </LinearLayout>
@@ -244,23 +248,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.41"
-                        android:text="City"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="City" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="London, England"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="London, England" />
 
 
                 </LinearLayout>
@@ -269,23 +273,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.15"
-                        android:text="Capacity"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Capacity" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="23500"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="23500" />
 
 
                 </LinearLayout>
@@ -300,7 +304,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_margin="8dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
             app:cardMaxElevation="10dp">
@@ -360,9 +364,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
+            android:layout_margin="8dp"
             app:cardMaxElevation="10dp">
 
 
@@ -376,7 +380,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
+                    android:gravity="center"
                     android:text="Info"
+                    android:drawableLeft="@drawable/ic_info"
+                    android:drawablePadding="12dp"
+                    android:maxLines="1"
+                    android:padding="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -384,23 +393,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.2"
-                        android:text="Match"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Match" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="CRR 3.9"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="CRR3.9" />
 
 
                 </LinearLayout>
@@ -408,23 +417,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.45"
-                        android:text="Series"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Series" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="ICC WORLD TEST \nCHAMPIONSHIP, 2021-2023"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="ICC WORLD TEST\n CHAMPIONSHIP, 2021-2023" />
 
 
                 </LinearLayout>
@@ -432,23 +441,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.23"
-                        android:text="Date"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Date" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="3:00 PM"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="21-04-2023" />
 
 
                 </LinearLayout>
@@ -456,46 +465,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.22"
-                        android:text="Time"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Time" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:text="CRR 3.9"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.19"
-                        android:text="Umpires"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.2"
-                        android:text="Chris Gaffaney, Richard Illingwort\nRichard Kettleborough, Michael Gough"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="5:00 PM" />
 
 
                 </LinearLayout>
@@ -503,23 +489,47 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.45"
-                        android:text="Referee"
-                        android:textStyle="bold" />
+                        android:layout_weight="3"
+                        android:text="Umpire" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_weight="0.7"
-                        android:text="Richie Richardson (West Indies)"
-                        android:textColor="@color/black" />
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="Chris Gaffaney, Richard illingwort\n Richard Kettleborough, Michael Gough" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Refferee" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:textAlignment="textStart"
+                        android:text="Richie Richardon (West Indies)" />
 
 
                 </LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="340dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradientmmodal"
+    tools:context=".Fragments.FragmentTab3">
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_margin="8dp"
+            android:elevation="8dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            android:background="#DDEADD">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/Img_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_margin="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/dhoni" />
+
+
+                <TextView
+                    android:id="@+id/Txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:text="Text"
+                    android:ems="10"
+                    android:layout_margin="5dp"
+                    android:maxLines="2"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/Txt_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:text="Text"
+                    android:layout_marginTop="8dp"
+                    android:layout_margin="5dp"
+                    android:maxLines="2"
+                    android:textColor="@color/black"/>
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+  </LinearLayout>
+
+
+

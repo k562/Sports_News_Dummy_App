@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    // Add the Crashlytics Gradle plugin
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -21,6 +24,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseCrashlytics {
+                // Enable processing and uploading of native symbols to Firebase servers.
+                // By default, this is disabled to improve build speeds.
+                // This flag must be enabled to see properly-symbolicated native
+                // stack traces in the Crashlytics dashboard.
+                nativeSymbolUploadEnabled true
+                strippedNativeLibsDir 'build/intermediates/stripped_native_libs/release/out/lib'
+                unstrippedNativeLibsDir 'build/intermediates/merged_native_libs/release/out/lib'
+            }
         }
     }
     compileOptions {
@@ -47,7 +59,7 @@ dependencies {
 
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 
-    def  nav_version = "2.5.3"
+    def  nav_version = "2.6.0"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
@@ -55,5 +67,41 @@ dependencies {
     // Material Design Library
 
     implementation 'com.google.android.material:material:1.9.0'
+
+
+     // Add the dependency for the Google services Gradle plugin
+
+//    classpath 'com.google.gms.google-services:4.3.15'
+
+    // Import the Firebase BoM
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')
+
+    //  Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    //  Crashlytics
+
+    implementation 'com.google.firebase:firebase-crashlytics-ndk'
+
+
+    // Ratrofit dependency
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // Gson dependency
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Glide dependency
+
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    // Chrome custom tab dependency
+
+    implementation 'androidx.browser:browser:1.5.0'
+
 
 }
