@@ -2,68 +2,89 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="340dp"
+    android:layout_height="104dp"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradientmmodal"
+    android:background="#EFEBEB"
     tools:context=".Fragments.FragmentTab3">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="10dp"
+        app:cardElevation="3dp">
 
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:layout_margin="8dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
-            android:background="#DDEADD">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/Img_news"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/dhoni"
+                app:shapeAppearanceOverlay="@style/RoundedImageView" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-
-                <ImageView
-                    android:id="@+id/Img_news"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/dhoni" />
-
-
-                <TextView
-                    android:id="@+id/Txt_title"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    style="@style/TextAppearance.AppCompat.Headline"
-                    android:text="Text"
-                    android:ems="10"
-                    android:layout_margin="5dp"
-                    android:maxLines="2"
-                    android:textColor="@color/black"/>
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="10dp">
+
+
+                    <TextView
+
+                        android:id="@+id/Txt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Goball.net"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="8dp"
+                        android:textSize="12sp"
+                        android:textColor="#918D8D" />
+
+
+
+                </LinearLayout>
+
 
                 <TextView
                     android:id="@+id/Txt_des"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Text"
-                    android:layout_marginTop="8dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Argentina success In \nWinning the 2022 World Cup ..."
                     android:maxLines="2"
-                    android:textColor="@color/black"/>
-
-
+                    android:textStyle="bold"
+                    android:textSize="14sp"  />
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 
   </LinearLayout>

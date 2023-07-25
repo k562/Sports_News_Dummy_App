@@ -11,7 +11,7 @@ import com.example.sportsnews.Fragments.T20_Fragment
 class Internationalpager_Adaper(fragmentManager: FragmentManager, lifecycle: Lifecycle) :  FragmentStateAdapter(fragmentManager, lifecycle) {
 
 
-    override fun getItemCount(): Int  = 3
+    override fun getItemCount(): Int  = 2
 
     override fun createFragment(position: Int): Fragment {
 
@@ -19,7 +19,6 @@ class Internationalpager_Adaper(fragmentManager: FragmentManager, lifecycle: Lif
 
             0 -> International_Fragment()
             1 -> T20_Fragment()
-            2 -> Domestic_Fragment()
             else -> throw IllegalArgumentException("Invalid tab position")
 
     }

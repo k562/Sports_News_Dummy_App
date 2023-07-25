@@ -6,20 +6,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragments.DetailNewsFragment"
-    android:background="@drawable/gradientmmodal">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/Toolbar3"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#03A9F4"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextColor="@android:color/white"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabMode="fixed"
-            android:background="#DB005B"
-            style="@style/CustomTabLayout"/>
+            android:background="#03A9F4"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/white"
+            />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager"

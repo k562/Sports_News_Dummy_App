@@ -16,4 +16,20 @@
         <item name="titleTextColor">@android:color/white</item>
         <item name="android:iconTint">@android:color/white</item>
     </style>
+
+    <style name="nighModeSwitch" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">#9C27B0</item>
+        <item name="colorSwitchThumbNormal">#9C27B0</item>
+        <item name="android:colorForeground">#99ffffff</item>
+    </style>
+
+    <style name="notificationSwitch" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">#14E61C</item>
+        <item name="colorSwitchThumbNormal">#14E61C</item>
+        <item name="android:colorForeground">#03A9F4</item>
+    </style>
+
+
 </resources>

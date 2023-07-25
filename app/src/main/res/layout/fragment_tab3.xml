@@ -6,26 +6,18 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradientmmodal"
-    tools:context=".Fragments.FragmentTab3">
+    tools:context=".Fragments.FragmentTab3"
+    >
 
+   <!-- Include the progress bar layout as the first child -->
+   <include layout="@layout/newsprogressbar" />
 
-
-
+   <!-- RecyclerView and other views -->
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/recycler_newlist"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="match_parent" />
+
+</LinearLayout>
 
 
-
-
-
-
-
-
-
-
-
-
-
-   </LinearLayout>

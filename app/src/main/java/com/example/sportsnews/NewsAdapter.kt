@@ -9,24 +9,22 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportsnews.Fragments.DetailNewsFragment
-import com.example.sportsnews.Fragments.Live
 
 
-class NewsAdapter(val context : Context, var listofnews: ArrayList<News>):RecyclerView.Adapter<NewsAdapter.viewholder>() {
+class NewsAdapter(val context : Context, val listofnews: ArrayList<ListMatch>):RecyclerView.Adapter<NewsAdapter.viewholder>() {
 
     class viewholder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
 
-        var live : TextView = itemView.findViewById(R.id.live)
-        var matchdetails : TextView = itemView.findViewById(R.id.matchdetails)
-        var bellimage : ImageView = itemView.findViewById(R.id.bellImage)
-        var country_Ind : ImageView = itemView.findViewById(R.id.country_Ind)
-        var Ind_text : TextView = itemView.findViewById(R.id.Ind_text)
-        var timings : TextView = itemView.findViewById(R.id.timing)
-        var Usa_text : TextView = itemView.findViewById(R.id.USA_text)
-        var country_Usa : ImageView = itemView.findViewById(R.id.country_USA)
-        var table : TextView = itemView.findViewById(R.id.table)
-        val schedule : TextView = itemView.findViewById(R.id.schedule)
+        var league : TextView = itemView.findViewById(R.id.league)
+        var frontteam_name : TextView = itemView.findViewById(R.id.frontteaname)
+        var oppteam_name : TextView = itemView.findViewById(R.id.opponentteamname)
+        var fronteamlogo : ImageView = itemView.findViewById(R.id.frontteamlogo)
+        var time : TextView = itemView.findViewById(R.id.time)
+        var date : TextView = itemView.findViewById(R.id.date)
+        var oppteamlogo : ImageView = itemView.findViewById(R.id.opponentteamlogo)
+
+
 
     }
 
@@ -40,21 +38,39 @@ class NewsAdapter(val context : Context, var listofnews: ArrayList<News>):Recycl
 
     override fun getItemCount(): Int {
 
-        return listofnews.size
+        return minOf(listofnews.size, 2)
+
+//        return  listofnews.size
     }
 
     override fun onBindViewHolder(holder: viewholder, position: Int) {
 
-        holder.live.text = listofnews[position].live
-        holder.matchdetails.text = listofnews[position].matchdetails
-        listofnews[position].bellimage.let { holder.bellimage.setImageResource(it)}
-        listofnews[position].country_ind.let { holder.country_Ind.setImageResource(it) }
-        holder.Ind_text.text = listofnews[position].Ind_text
-        holder.timings.text = listofnews[position].timings
-        holder.Usa_text.text = listofnews[position].Usa_text
-        listofnews[position].country_usa.let { holder.country_Usa.setImageResource(it) }
-        holder.table.text = listofnews[position].table
-        holder.schedule.text = listofnews[position].schedule
+        val livelist = listofnews[position]
+
+        holder.league.text = listofnews[position].league
+
+
+        holder.frontteam_name.text = listofnews[position].frontteam_countryName
+
+        holder.oppteam_name.text = listofnews[position].opponentteam_countryName
+
+
+
+//            Glide.with(context).load(livelist.frontTeamLogo).into(holder.fronteamlogo)
+
+        listofnews[position].frontteam_logo.let { holder.fronteamlogo.setImageResource(it)}
+
+
+        holder.time.text = listofnews[position].time
+        holder.date.text = listofnews[position].date
+
+
+
+//            Glide.with(context).load(livelist.oppTeamLogo).into(holder.oppteamlogo)
+
+        listofnews[position].opponentteam_logo.let { holder.oppteamlogo.setImageResource(it)}
+
+
 
          holder.itemView.setOnClickListener {
 

@@ -16,6 +16,7 @@ import com.example.sportsnews.Fragments.SeriesFragment
 import com.example.sportsnews.Fragments.UpcomingFragment
 import com.example.sportsnews.Fragments.live_Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import meow.bottomnavigation.MeowBottomNavigation
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        window.setStatusBarColor(Color.parseColor("#DB005B"))
+        window.setStatusBarColor(Color.parseColor("#03A9F4"))
         toolbar = findViewById(R.id.Toolbar)
         bottomnavigationview = findViewById(R.id.BottomNavigationView)
 
@@ -38,9 +39,13 @@ class MainActivity : AppCompatActivity() {
 
         // Apply the appropriate theme based on the current state of dark mode
         if (isDarkModeEnabled) {
+
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
         } else {
+
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         }
 
         replacewithFragment(live_Fragment())
@@ -48,13 +53,14 @@ class MainActivity : AppCompatActivity() {
         setuptoolbar()
 
 
+
         bottomnavigationview.setOnItemSelectedListener {
 
             when(it.itemId){
                 R.id.live -> replacewithFragment(live_Fragment())
                 R.id.news -> replacewithFragment(NewsFragment())
-                R.id.ranking -> replacewithFragment(RankingFragment())
-                R.id.series -> replacewithFragment(SeriesFragment())
+                R.id.profile -> replacewithFragment(RankingFragment())
+//              R.id.series -> replacewithFragment(SeriesFragment())
                 R.id.upcoming -> replacewithFragment(UpcomingFragment())
 
                 else -> {
@@ -64,6 +70,9 @@ class MainActivity : AppCompatActivity() {
 
            true
         }
+
+
+
     }
 
      fun replacewithFragment(fragment : Fragment){
@@ -95,21 +104,7 @@ class MainActivity : AppCompatActivity() {
 
 
         when(item.itemId){
-            R.id.Ratethisapp -> {
 
-            }
-
-            R.id.Feedback -> {
-
-            }
-
-            R.id.Sharethisapp -> {
-
-            }
-
-            R.id.Settings -> {
-
-            }
 
             R.id.darkmode -> {
 

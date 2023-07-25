@@ -1,60 +1,84 @@
 package com.example.sportsnews.Fragments
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sportsnews.R
+import com.example.sportsnews.UpcomingAdapter
+import com.example.sportsnews.upcomingData
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [UpcomingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class UpcomingFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+      lateinit var upcomingrecycler : RecyclerView
+      lateinit var UpcomingAdapter : UpcomingAdapter
+      lateinit var toolbarupcoming : Toolbar
+      var upcominglist = ArrayList<upcomingData>()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_upcoming, container, false)
+       val view = inflater.inflate(R.layout.fragment_upcoming, container, false)
+
+        upcomingrecycler = view.findViewById(R.id.upcoming_recycler)
+        upcomingrecycler.layoutManager = LinearLayoutManager(activity as Context)
+        upcomingrecycler.setHasFixedSize(true)
+
+        // Get a reference to the toolbar
+        val toolbar = requireActivity().findViewById<Toolbar>(R.id.Toolbar)
+
+// Set the toolbar background color
+        toolbar.setBackgroundColor(Color.parseColor("#03A9F4"))
+
+        // Hide the title
+        toolbar.title = "Upcoming"
+
+// Hide the options menu
+//        toolbar.menu.clear()
+
+        // Hide the toolbar
+        toolbar.visibility = View.GONE
+        toolbarupcoming = view.findViewById(R.id.Toolbarupcoming)
+
+        toolbarupcoming.title = "Upcoming Matches"
+
+        val window = requireActivity().window
+        // Set the status bar color
+        window.statusBarColor = Color.parseColor("#03A9F4")
+
+
+
+
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+        upcominglist.add(upcomingData("Match 44 . ECS Sweden" , R.drawable.france , "France" , R.drawable.us , "Argentina" , "Today" , "7:00 PM"))
+
+
+
+        UpcomingAdapter = UpcomingAdapter(activity as Context , upcominglist)
+        upcomingrecycler.adapter = UpcomingAdapter
+        UpcomingAdapter.notifyDataSetChanged()
+
+
+
+       return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UpcomingFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            UpcomingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

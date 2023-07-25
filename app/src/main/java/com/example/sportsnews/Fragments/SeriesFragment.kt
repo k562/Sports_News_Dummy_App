@@ -1,12 +1,14 @@
 package com.example.sportsnews.Fragments
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import com.example.sportsnews.Internationalpager_Adaper
 import com.example.sportsnews.R
@@ -36,18 +38,36 @@ class SeriesFragment : Fragment() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
            when(position){
 
-               0 -> tab.text = "INTERNATIONAL"
-               1 -> tab.text = "T20 LEAGUE"
-               2 -> tab.text = "DOMESTIC"
+               0 -> tab.text = "Table"
+               1 -> tab.text = "Schedule"
+
            }
 
         }.attach()
 
-        for(i in 0 ..3){
 
-            val textView = LayoutInflater.from(requireContext()).inflate(R.layout.tab_title, null) as TextView
-            tabLayout.getTabAt(i)?.customView = textView
-        }
+
+
+
+        // Get a reference to the toolbar
+        val toolbar = requireActivity().findViewById<Toolbar>(R.id.Toolbar)
+
+// Set the toolbar background color
+        toolbar.setBackgroundColor(Color.parseColor("#EFEBEB"))
+
+        // Hide the title
+        toolbar.title = ""
+
+// Hide the options menu
+//        toolbar.menu.clear()
+
+        // Hide the toolbar
+        toolbar.visibility = View.GONE
+
+
+        val window = requireActivity().window
+        // Set the status bar color
+        window.statusBarColor = Color.parseColor("#03A9F4")
 
 
 

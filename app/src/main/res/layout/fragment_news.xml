@@ -1,244 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradientmmodal"
+    android:background="#EFEBEB"
     tools:context=".Fragments.FragmentTab3">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Toolbarnews"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#03A9F4"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleTextColor="@android:color/white"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+    <!--   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="News"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="18sp"/>
+
+    </LinearLayout> -->
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/CardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
-            android:background="#DDEADD">
+            android:text="Trending News"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="23dp"/>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <ImageView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/dhoni" />
-
-
-                <TextView
-
-                    android:layout_width="385dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="9dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:text="IPL 2023: Decrypting the engima \nof MS Dhoni's future in the IPL"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Sports Star .thehindu .1h"
-                    android:drawableLeft="@drawable/ic_sports_icon"
-                    android:gravity="center"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_margin="5dp"
-                    android:maxLines="2"
-                    android:textColor="@color/black"/>
-
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/showmore1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
-            android:background="#DDEADD">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <ImageView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/dhoni" />
-
-
-                <TextView
-
-                    android:layout_width="385dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="9dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:text="IPL 2023: Decrypting the engima \nof MS Dhoni's future in the IPL"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Sports Star .thehindu .1h"
-                    android:drawableLeft="@drawable/ic_sports_icon"
-                    android:gravity="center"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_margin="5dp"
-                    android:maxLines="2"
-                    android:textColor="@color/black"/>
-
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
-            android:background="#DDEADD">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <ImageView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/dhoni" />
-
-
-                <TextView
-
-                    android:layout_width="385dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="9dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:text="IPL 2023: Decrypting the engima \nof MS Dhoni's future in the IPL"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Sports Star .thehindu .1h"
-                    android:drawableLeft="@drawable/ic_sports_icon"
-                    android:gravity="center"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_margin="5dp"
-                    android:maxLines="2"
-                    android:textColor="@color/black"/>
-
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:elevation="8dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
-            android:background="#DDEADD">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-
-                <ImageView
-
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/dhoni" />
-
-
-                <TextView
-
-                    android:layout_width="385dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="9dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:text="IPL 2023: Decrypting the engima \nof MS Dhoni's future in the IPL"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Sports Star .thehindu .1h"
-                    android:drawableLeft="@drawable/ic_sports_icon"
-                    android:gravity="center"
-                    android:drawablePadding="10dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_margin="5dp"
-                    android:maxLines="2"
-                    android:textColor="@color/black"/>
-
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+            android:text="Show More"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:layout_marginEnd="25dp"
+            android:textAlignment="textEnd"/>
 
 
     </LinearLayout>
@@ -246,6 +92,90 @@
 
 
 
+    <!--Recycler View widget-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_viewReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/report_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:scrollbars="horizontal"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
 
-</ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="@+id/constraintlayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintTop_toBottomOf="@+id/CardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Highlighs"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp18"
+                        android:layout_marginStart="22dp"/>
+
+                    <TextView
+                        android:id="@+id/showmore2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show More"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="25dp"
+                        android:textAlignment="textEnd"/>
+
+
+                </LinearLayout>
+
+
+
+
+                  <androidx.recyclerview.widget.RecyclerView
+
+                      android:id="@+id/recyclerViewHighlights"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      tools:listitem="@layout/list_highlights"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+   </LinearLayout>
+
+

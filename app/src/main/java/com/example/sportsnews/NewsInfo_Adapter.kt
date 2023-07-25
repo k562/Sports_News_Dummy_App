@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+import com.example.sportsnews.models.newsdetails
 
 
 class NewsInfo_Adapter (val context : Context , val newsinfolist : ArrayList<newsdetails>): RecyclerView.Adapter<NewsInfo_Adapter.ViewHolder>()  {

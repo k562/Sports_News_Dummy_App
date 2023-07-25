@@ -5,27 +5,28 @@
     <item
         android:id="@+id/live"
         android:title="LIVE"
-        android:icon="@drawable/ic_live"/>
+        android:icon="@drawable/liv"
+        android:enabled="true"/>
 
     <item
         android:id="@+id/upcoming"
         android:title="UPCOMING"
-        android:icon="@drawable/ic_upcoming"/>
+        android:icon="@drawable/up"/>
 
     <item
         android:id="@+id/news"
         android:title="NEWS"
-        android:icon="@drawable/ic_news"/>
+        android:icon="@drawable/ne2"/>
 
-    <item
+  <!--  <item
         android:id="@+id/series"
         android:title="SERIES"
-        android:icon="@drawable/ic_series"/>
+        android:icon="@drawable/ic_series"/>-->
 
     <item
-        android:id="@+id/ranking"
-        android:title="RANKING"
-        android:icon="@drawable/ic_ranking"/>
+        android:id="@+id/profile"
+        android:title="PROFILE"
+        android:icon="@drawable/per"/>
 
 
 

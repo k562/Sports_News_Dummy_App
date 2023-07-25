@@ -21,22 +21,18 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout2"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/tablayout_background"
-            android:elevation="3dp"
-            app:tabIndicatorColor="@android:color/white"
-            app:tabIndicatorHeight="0dp"
-            app:tabGravity="center"
-            android:layout_margin="10dp"
-            app:tabRippleColor="@null"
+            android:layout_height="wrap_content"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@android:color/white"
-            app:tabTextColor="@android:color/white" />
+            android:background="#03A9F4"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/white"
+            />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
       <!--  <androidx.viewpager.widget.ViewPager2
             android:id="@+id/viewPagers"
