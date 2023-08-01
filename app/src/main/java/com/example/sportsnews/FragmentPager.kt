@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.sportsnews.Fragments.FragmentTab3
+import com.example.sportsnews.Fragments.NewsInfo
 import com.example.sportsnews.Fragments.Info_Fragment2
 
 class FragmentPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
@@ -19,7 +19,7 @@ class FragmentPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) : Fr
         // Create and return the fragment for each tab
         return when (position) {
             0 -> Info_Fragment2 ()
-            1 -> FragmentTab3 ()
+            1 -> NewsInfo ()
 
             else -> throw IllegalArgumentException("Invalid tab position")
         }

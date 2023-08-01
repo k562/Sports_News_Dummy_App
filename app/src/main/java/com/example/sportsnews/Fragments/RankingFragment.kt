@@ -27,6 +27,7 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.example.sportsnews.EditProfile
 import com.example.sportsnews.FragmentPager
 import com.example.sportsnews.R
@@ -34,6 +35,9 @@ import com.example.sportsnews.RankingPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 
 
 class RankingFragment : Fragment() {
@@ -45,8 +49,15 @@ class RankingFragment : Fragment() {
      lateinit var logout2  : RelativeLayout
      lateinit var sharetheApp : RelativeLayout
      lateinit var Btn_edit : AppCompatButton
+     lateinit var userImage : ImageView
      lateinit var Rate : RelativeLayout
      lateinit var notification_switch : Switch
+     lateinit var userEmail : TextView
+
+     lateinit var firebaseStorage: FirebaseStorage
+     lateinit var firebaseDatabase: FirebaseDatabase
+     lateinit var firebaseAuth: FirebaseAuth
+
 
 
     override fun onCreateView(
@@ -64,6 +75,7 @@ class RankingFragment : Fragment() {
         Rate = view.findViewById(R.id.Rate)
         notification_switch = view.findViewById(R.id.notification_switch)
         toolbarprofile = view.findViewById(R.id.Toolbarprofile)
+        userImage = view.findViewById(R.id.Img_profile)
 
 
        settings.setOnClickListener {
@@ -71,17 +83,7 @@ class RankingFragment : Fragment() {
            startActivity(settingsIntent)
        }
 
-//        switchNightmode.setOnCheckedChangeListener { _, isChecked ->
-//            if (isChecked) {
-//                // Night Mode is enabled
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//            } else {
-//                // Night Mode is disabled
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//            }
-//            // Recreate the activity to apply the theme immediately
-//            requireActivity().recreate()
-//        }
+
 
         toolbarprofile.title = "Profile"
 
@@ -148,22 +150,64 @@ class RankingFragment : Fragment() {
 
         toolbar.visibility = View.GONE
 
+        loaduserImage()
+
         return view
+    }
+
+
+    fun loaduserImage() {
+
+        firebaseStorage = FirebaseStorage.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        val user = firebaseAuth.currentUser
+        val userreference = firebaseDatabase.getReference("Users")
+        val uid = user!!.uid
+        val imagereference = firebaseStorage.getReference("ProfileImages").child(uid)
+
+
+
+        // Retrieve the image URL and email from arguments bundle
+
+
+//        userreference.child("imageUri").get().addOnSuccessListener { dataSnapshot ->
+//            val downloadUrl = dataSnapshot.value as? String
+//
+//            if (!downloadUrl.isNullOrEmpty()) {
+//                // Use Glide to load the user image into the profileImageView
+//                Glide.with(this)
+//                    .load(downloadUrl)
+//                    .into(userImage)
+//            } else {
+//                // If the download URL is empty or null, show a default placeholder image
+//                Glide.with(this)
+//                    .load(R.drawable.man) // Replace with your default image resource
+//                    .into(userImage)
+//            }
+//        }.addOnFailureListener { exception ->
+//            // Error occurred while retrieving the image URL
+//            // Show a default placeholder image
+//            Glide.with(this)
+//                .load(R.drawable.man) // Replace with your default image resource
+//                .into(userImage)
+//
+//        }
+
     }
 
     private fun triggerNotification() {
         val notificationManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channelId = "your_channel_id" // Replace with your own channel ID
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                channelId,
-                "Channel Name",
-                NotificationManager.IMPORTANCE_DEFAULT
-            )
-            // Customize the channel settings if needed
-            notificationManager.createNotificationChannel(channel)
-        }
+        val channel = NotificationChannel(
+            channelId,
+            "Channel Name",
+            NotificationManager.IMPORTANCE_DEFAULT
+        )
+        // Customize the channel settings if needed
+        notificationManager.createNotificationChannel(channel)
 
         val notificationBuilder = NotificationCompat.Builder(requireContext(), channelId)
             .setSmallIcon(R.drawable.notification)

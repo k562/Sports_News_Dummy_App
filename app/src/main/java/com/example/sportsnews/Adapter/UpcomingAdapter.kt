@@ -1,16 +1,18 @@
-package com.example.sportsnews
+package com.example.sportsnews.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestListener
+import com.example.sportsnews.R
+import com.example.sportsnews.models.UpcomingList
 
-class UpcomingAdapter (var context : Context , var upcominglist : ArrayList<upcomingData>):RecyclerView.Adapter<UpcomingAdapter.upcomingViewHolder> () {
+class UpcomingAdapter (var context : Context , var upcominglist : List<UpcomingList.UpcomingMatche>):RecyclerView.Adapter<UpcomingAdapter.upcomingViewHolder> () {
 
 
     class upcomingViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,7 +30,7 @@ class UpcomingAdapter (var context : Context , var upcominglist : ArrayList<upco
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): upcomingViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.upcominglist , parent , false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.upcominglist, parent , false)
 
         return upcomingViewHolder(view)
     }
@@ -42,21 +44,17 @@ class UpcomingAdapter (var context : Context , var upcominglist : ArrayList<upco
 
         val upcomingData = upcominglist[position]
 
-        holder.status.text = upcominglist[position].status
-//      holder.img1.setImageResource(upcominglist[position].img1)
-        upcominglist[position].img1.let { holder.img1.setImageResource(it) }
-        holder.textview1.text = upcominglist[position].textview1
+        holder.status.text = upcomingData.matchName
+
+        Glide.with(context).load(upcominglist[position].frontTeam.frontTeamLogo).placeholder(R.drawable.iconerror).into(holder.img1)
+        holder.textview1.text = upcomingData.frontTeam.frontTeamName
+
+        Glide.with(context).load(upcominglist[position].oppTeam.oppTeamLogo).placeholder(R.drawable.iconerror).into(holder.img2)
+        holder.textview2.text = upcomingData.oppTeam.oppTeamName
 
 
-
-        upcominglist[position].img2.let { holder.img2.setImageResource(it) }
-        holder.textview2.text = upcominglist[position].textview2
-        holder.today.text = upcominglist[position].today
-        holder.time.text = upcominglist[position].time
-
-
-
-
+        holder.today.text = upcomingData.matchDate
+        holder.time.text = upcomingData.matchTime
 
 
     }

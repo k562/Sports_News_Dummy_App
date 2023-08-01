@@ -1,4 +1,4 @@
-package com.example.sportsnews
+package com.example.sportsnews.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.sportsnews.NewsExplaination
+import com.example.sportsnews.R
+import com.example.sportsnews.models.NewsTrendingHighlights
 
-class Highlights_Adapter (val context : Context , val highlightslist : ArrayList<highlights_data>) : RecyclerView.Adapter<Highlights_Adapter.highlights_viewmodal>() {
+class Highlights_Adapter (val context : Context , val highlightslist : List<NewsTrendingHighlights.NewsDetails.Highlight>) : RecyclerView.Adapter<Highlights_Adapter.highlights_viewmodal>() {
 
     class highlights_viewmodal (itemView : View) : RecyclerView.ViewHolder(itemView) {
 
@@ -38,25 +40,24 @@ class Highlights_Adapter (val context : Context , val highlightslist : ArrayList
 
         val highlights = highlightslist[position]
 
-        holder.Txt_highlights_resource.text = highlightslist[position].Txt_highlights_resource
-        holder.Txt_hightlights_date.text = highlightslist[position].Txt_hightlightsdate
-        holder.Txt_highlights_title.text = highlightslist[position].Txt_highlights_title
-
-        highlightslist[position].Img_highlights.let { holder.Img_highlights.setImageResource(it) }
-
-       holder.itemView.setOnClickListener{
-
-//           val fragmentmanager = (holder.itemView.context as AppCompatActivity).supportFragmentManager
-//           val transaction = fragmentmanager.beginTransaction()
-//           transaction.replace(R.id.Framelayout , News_Explaination ())
-//
-//           transaction.addToBackStack("NewsDetailFragment")
-//           transaction.commit()
+        holder.Txt_highlights_resource.text = highlights.newSource
+        holder.Txt_hightlights_date.text =highlights.newsDate
+        holder.Txt_highlights_title.text = highlights.newsTitle
 
 
-            val i = Intent(context , NewsExplaination::class.java)
+        Glide.with(context).load(highlights.newsImage).placeholder(R.drawable.error).into(holder.Img_highlights)
 
-            context.startActivity(i)
+          holder.itemView.setOnClickListener{
+
+           val intent = Intent(context , NewsExplaination::class.java)
+           intent.putExtra("newsId", highlights.newsId.toString())
+           intent.putExtra("news_type", "highlights")
+           context.startActivity(intent)
        }
+    }
+
+
+    interface OnItemClickListener {
+        fun onItemClick(newsId: String)
     }
 }

@@ -3,7 +3,7 @@ package com.example.sportsnews.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Matches(
+data class Matchlist(
     @SerializedName("message")
     val message: String,
     @SerializedName("sportsNews")

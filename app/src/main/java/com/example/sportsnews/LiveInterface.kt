@@ -1,12 +1,12 @@
 package com.example.sportsnews
 
+import com.example.sportsnews.dummyModels.ListMatch
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.POST
 
 //https://a226-2401-4900-1c74-84f9-65c7-9869-8201-1e68.ngrok-free.app/api/v1/Matchlist
 

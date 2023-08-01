@@ -79,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:maxLines="2"
             android:text="Argentina success In \nWinning the 2022 World Cup ..."
             android:textStyle="bold"
             android:textSize="14sp"  />

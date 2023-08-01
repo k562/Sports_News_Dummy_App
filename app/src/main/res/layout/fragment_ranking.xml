@@ -75,6 +75,7 @@
 
 
             <ImageView
+                android:id="@+id/Img_profile"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -92,6 +93,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/Email_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

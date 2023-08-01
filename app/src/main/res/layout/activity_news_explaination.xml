@@ -32,13 +32,13 @@
             android:layout_width="0dp"
             android:layout_height="240dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:src="@drawable/barcelona"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbaractivity" />
 
         <TextView
-            android:id="@+id/tectviewx"
+            android:id="@+id/views"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tellychakkar"
@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/tectviewx.1"
+            android:id="@+id/timing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -57,12 +57,12 @@
             android:text="2:12 Pm"
             android:textAlignment="center"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/tectviewx"
+            app:layout_constraintStart_toEndOf="@+id/views"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
         <TextView
-            android:id="@+id/tectviewx.2"
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -70,7 +70,7 @@
             android:gravity="center_vertical"
             android:text="11th April 2023"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/tectviewx.1"
+            app:layout_constraintStart_toEndOf="@+id/timing"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <LinearLayout
@@ -79,13 +79,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/tectviewx"
+            app:layout_constraintTop_toBottomOf="@id/views"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
 
             <TextView
-                android:id="@+id/titlenewslist"
+                android:id="@+id/titlenews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -108,14 +108,13 @@
             app:layout_constraintTop_toBottomOf="@+id/linearlayoutitle">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/newsdes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:justificationMode="inter_word"
-                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-                />
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book" />
 
             <TextView
                 android:layout_width="match_parent"

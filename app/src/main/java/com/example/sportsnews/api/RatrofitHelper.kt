@@ -7,15 +7,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-//  https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=04a4b3ccea7a4e638f5f5d5c17b0e161
 
 
 
-  object RatrofitHelper {
+object RatrofitHelper {
 
-      private const val BASE_URL = "https://newsapi.org/"
-
-//      private const val BASE_URL = "https://55d0-2401-4900-1c88-4eb8-2c5f-fd0f-fa0f-9c9d.ngrok-free.app/api/v1"
+      private const val BASE_URL = "https://e4e6-2401-4900-1c88-4fc8-dc94-1bd4-119a-f04b.ngrok-free.app/api/v1/"
 
 
 
@@ -34,6 +31,11 @@ import retrofit2.converter.gson.GsonConverterFactory
                .build()
 
        }
+
+      fun getMyApi() : apiInterface {
+          return getInstance().create(apiInterface::class.java)
+
+      }
 
 
 

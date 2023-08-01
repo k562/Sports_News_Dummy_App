@@ -1,4 +1,4 @@
-package com.example.sportsnews
+package com.example.sportsnews.dummyModels
 
 data class highlights_data(
 

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#EFEBEB"
-    tools:context=".Fragments.FragmentTab3">
+    tools:context=".Fragments.NewsInfo">
 
 
     <androidx.core.widget.NestedScrollView
@@ -89,10 +89,7 @@
 
     </LinearLayout>
 
-
-
-
-    <!--Recycler View widget-->
+     <!--Recycler View widget-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_viewReport"
         android:layout_width="match_parent"

@@ -2,36 +2,94 @@ package com.example.sportsnews.api
 
 
 
-import com.example.sportsnews.models.Newsdata
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
+import com.example.sportsnews.models.Matchlist
+import com.example.sportsnews.models.NewInfo
+import com.example.sportsnews.models.NewsDetails_2
+import com.example.sportsnews.models.NewsTrendingHighlights
+import com.example.sportsnews.models.UpcomingList
+import retrofit2.Call
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
-import retrofit2.http.Query
 
 
-    //  https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=04a4b3ccea7a4e638f5f5d5c17b0e161
+interface apiInterface {
+
+     // Newinfo list
+     @FormUrlEncoded
+     @POST("newsList")
+      fun getnewsInfo(
+        @Field("userId")userId : String ,
+        @Field("securityToken")securityToken: String ,
+        @Field("versionName")versionName: String ,
+        @Field("versionCode")versionCode: String,
+        @Field("newsId")newsId: String,
+        @Field("newsCategory")newsCategory: String ): Call<NewInfo>
 
 
-const val API_KEY = "04a4b3ccea7a4e638f5f5d5c17b0e161"
+     // Match list
+     @FormUrlEncoded
+     @POST("sportsNews")
+      fun getMatchList(
+         @Field("userId") userId :String,
+         @Field("securityToken")securityToken : String ,
+         @Field("versionName")versionName : String,
+         @Field("versionCode") versionCode: String): Call<Matchlist>
+
+    // Latest News list
+     @FormUrlEncoded
+     @POST("sportsNews")
+     fun getNewslist (
+          @Field("userId") userId: String ,
+          @Field("securityToken")securityToken: String ,
+          @Field("versionName")versionName: String ,
+          @Field("versionCode")versionCode: String ) : Call<Matchlist>
 
 
- interface apiInterface {
-
-     // New list
-     @GET("v2/top-headlines?apiKey=${API_KEY}")
-     suspend fun getheadlines(
-         @Query("country") country: String,
-         @Query("page") page: Int,
-         @Query("category") category: String
-     ): Newsdata
+     @FormUrlEncoded
+     @POST("upcomingMatches")
+     fun getupcominglist(
+         @Field("userId") userId: String,
+         @Field("securityToken")securityToken: String,
+         @Field("versionName")versionName: String,
+         @Field("versionCode")versionCode: String ) : Call<UpcomingList>
 
 
-     // Match board
 
-//     @POST("sportsNews")
-//     suspend fun matchstatus(): Matches
+     @FormUrlEncoded
+     @POST("newsDetails")
+     fun getNewsTrendingHighlights(
+         @Field("userId") userId: String,
+         @Field("securityToken")securityToken: String,
+         @Field("versionName")versionName: String,
+         @Field("versionCode")versionCode: String,
+
+         @Field("newsCategory")newsCategory: String ,
+         ) : Call <NewsTrendingHighlights>
+
+
+
+
+        @FormUrlEncoded
+        @POST("newsDetails")
+        fun getNewsHighlights(
+            @Field("userId") userId: String,
+            @Field("securityToken")securityToken: String,
+            @Field("versionName")versionName: String,
+            @Field("versionCode")versionCode: String,
+            @Field("newsCategory")newsCategory: String , ) : Call <NewsTrendingHighlights>
+
+
+
+    @FormUrlEncoded
+    @POST("newsDetails")
+    fun getNewsdetails (
+        @Field("userId") userId: String ,
+        @Field("securityToken")securityToken: String ,
+        @Field("versionName")versionName: String ,
+        @Field("versionCode")versionCode: String ,
+        @Field("newsId") newsId: String ) : Call<NewsDetails_2>
+
 
  }
 

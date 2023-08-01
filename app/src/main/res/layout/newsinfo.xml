@@ -6,7 +6,7 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradientmmodal"
-    tools:context=".Fragments.FragmentTab3"
+    tools:context=".Fragments.NewsInfo"
     >
 
    <!-- Include the progress bar layout as the first child -->

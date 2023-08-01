@@ -1,50 +1,131 @@
 package com.example.sportsnews.viewmodels
 
-import androidx.lifecycle.LiveData
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.sportsnews.models.Matches
-import com.example.sportsnews.models.Newsdata
-import com.example.sportsnews.models.newsdetails
+import com.example.sportsnews.models.Matchlist
+import com.example.sportsnews.models.NewInfo
+import com.example.sportsnews.models.NewsDetails_2
+import com.example.sportsnews.models.NewsTrendingHighlights
+import com.example.sportsnews.models.UpcomingList
 import com.example.sportsnews.repository.NewsRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class NewsMainViewModel (private val repository: NewsRepository): ViewModel() {
+class NewsMainViewModel (application: Application): AndroidViewModel(application) {
 
-    // Initialize newslist as MutableLiveData
-    private val newsListLiveData = MutableLiveData<List<newsdetails>>()
+   var repository : NewsRepository? = null
 
-    // Expose it as LiveData to the Fragment
-    val newsList: LiveData<List<newsdetails>> get() = newsListLiveData
-
-
-
-
-//   private val matchesliveData = MutableLiveData<List<Matches>>()
-
-//    val matches : LiveData<List<Matches>>()
-
-
-    init {
-
-        viewModelScope.launch ( Dispatchers.IO ) {
-
-            try {
-
-                val result = repository.getNews()
-                val newsData = result.articles
-                newsListLiveData.postValue(newsData)
-            } catch (e: Exception) {
-                // Handle any errors or exceptions that might occur during the network call
-                e.printStackTrace()
-        }
-
-        }
+    init{
+        repository = NewsRepository()
     }
 
-    val news : LiveData<Newsdata>
-        get() = repository.news
+
+    fun matchlist(
+             userID : String ,
+             versionName : String ,
+             versionCode : String ,
+             securityToken : String
+         ) :MutableLiveData<Matchlist?> {
+
+           return repository!!.getMatchList (
+               userID,
+               versionName,
+               versionCode,
+               securityToken  ) }
+
+
+      fun newslist(
+          userID : String ,
+          versionName : String ,
+          versionCode : String ,
+          securityToken : String
+      ) : MutableLiveData<Matchlist?>{
+
+
+          return repository!!.getNewslist(
+              userID,
+              securityToken,
+              versionName,
+              versionCode,  ) }
+
+    fun upcominglist(
+        userId : String ,
+        versionName : String ,
+        versionCode : String ,
+        securityToken : String
+    ) : MutableLiveData<UpcomingList?>{
+
+        return repository!!.getUpcominglist(
+            userId,
+            versionName,
+            versionCode,
+            securityToken, )}
+
+
+    fun newstrendinghighlights(
+        userID : String ,
+        versionName : String ,
+        versionCode : String ,
+        securityToken : String,
+
+        newsCategory : String,
+    ) : MutableLiveData<NewsTrendingHighlights?>{
+
+        return repository!!.getNewsTrendinghighlights(
+            userID,
+            securityToken,
+            versionName,
+            versionCode,
+
+            newsCategory ) }
+
+    fun newshighlights(
+        userID : String ,
+        versionName : String ,
+        versionCode : String ,
+        securityToken : String,
+
+        newsCategory : String,
+    ) : MutableLiveData<NewsTrendingHighlights?>{
+
+        return repository!!.getNewsHighlights(
+            userID,
+            securityToken,
+            versionName,
+            versionCode,
+            newsCategory ) }
+
+    fun newsinfo(
+        userID : String ,
+        versionName : String ,
+        versionCode : String ,
+        securityToken : String,
+        newsId : String,
+        newsCategory : String,
+    ) : MutableLiveData<NewInfo?>{
+
+        return repository!!.getNewsInfo(
+            userID,
+            securityToken,
+            versionName,
+            versionCode,
+            newsId,
+            newsCategory ) }
+
+
+    fun newsDetails (
+        userId : String ,
+        versionName : String ,
+        versionCode : String ,
+        securityToken : String,
+        newsId: String
+
+    ) : MutableLiveData<NewsDetails_2?>{
+
+        return repository!!.getNewsDetails(
+            userId,
+            securityToken,
+            versionName,
+            versionCode,
+            newsId) }
 
 }

@@ -1,4 +1,4 @@
-package com.example.sportsnews
+package com.example.sportsnews.dummyModels
 
  data class Report_Data_class (
 

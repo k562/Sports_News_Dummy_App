@@ -1,4 +1,4 @@
-package com.example.sportsnews
+package com.example.sportsnews.dummyModels
 
 
 import com.google.gson.annotations.SerializedName

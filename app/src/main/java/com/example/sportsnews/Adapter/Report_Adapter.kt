@@ -1,4 +1,4 @@
-package com.example.sportsnews
+package com.example.sportsnews.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sportsnews.Fragments.DetailNewsFragment
+import com.bumptech.glide.Glide
+import com.example.sportsnews.NewsExplaination
+import com.example.sportsnews.R
+import com.example.sportsnews.models.NewsTrendingHighlights
 
-class Report_Adapter(val context : Context , val reportlist : ArrayList<Report_Data_class>) : RecyclerView.Adapter<Report_Adapter.Report_viewholder>() {
+class Report_Adapter(val context : Context , val reportlist : List<NewsTrendingHighlights.NewsDetails.TrendingNew>) : RecyclerView.Adapter<Report_Adapter.Report_viewholder>() {
 
 
     class Report_viewholder (itemview : View):RecyclerView.ViewHolder(itemview) {
@@ -42,27 +44,19 @@ class Report_Adapter(val context : Context , val reportlist : ArrayList<Report_D
 
         val report = reportlist[position]
 
-      holder.Txt_views.text = reportlist[position].Txt_views
-      holder.Txt_report_title.text = reportlist[position].Txt_report_title
+      holder.Txt_views.text = report.newsViews
+      holder.Txt_report_title.text = report.newsDescription
 
-       // holder.Img_report.setImageResource(reportlist[position].Img_report)
-
-        reportlist[position].Img_report.let { holder.Img_report.setImageResource(it) }
+     Glide.with(context).load(report.newsImage).placeholder(R.drawable.error).into(holder.Img_report)
 
 
         holder.itemView.setOnClickListener {
 
+        val intent = Intent(context , NewsExplaination::class.java)
+        intent.putExtra("newsId", report.newsId.toString())
+        intent.putExtra("news_type", "trending")
+        context.startActivity(intent)
 
-//            val fragmentmanager = (holder.itemView.context as AppCompatActivity).supportFragmentManager
-//            val transaction = fragmentmanager.beginTransaction()
-//            transaction.replace(R.id.Framelayout , News_Explaination())
-//
-//            transaction.addToBackStack("NewsDetailFragment")
-//            transaction.commit()
-
-
-            val intent = Intent(context , NewsExplaination::class.java)
-            startActivity(context , intent , null)
         }
 
 
